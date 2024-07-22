@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("PrefabElement_structuralProperties_loadBearingCapacity")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-22T12:39:53.538330383Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-22T13:28:40.193462312Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
 public class PrefabElementStructuralPropertiesLoadBearingCapacity {
 
   private BigDecimal maximumLoad;
