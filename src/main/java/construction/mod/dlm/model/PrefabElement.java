@@ -35,7 +35,7 @@ import javax.annotation.Generated;
  */
 
 @Schema(name = "PrefabElement", description = "Prefab Element")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-26T13:42:12.093278860Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-26T14:15:16.055440508Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
 public class PrefabElement {
 
   private UUID id;
