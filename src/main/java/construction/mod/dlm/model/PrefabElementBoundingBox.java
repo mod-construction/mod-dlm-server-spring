@@ -22,7 +22,7 @@ import javax.annotation.Generated;
 
 @Schema(name = "PrefabElement_boundingBox", description = "The bounding box of an element in millimeters.")
 @JsonTypeName("PrefabElement_boundingBox")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-26T13:35:49.961443426Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-26T13:42:12.093278860Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
 public class PrefabElementBoundingBox {
 
   private BigDecimal width;

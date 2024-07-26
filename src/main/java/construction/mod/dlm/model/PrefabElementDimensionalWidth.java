@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("PrefabElement_dimensional_width")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-26T13:35:49.961443426Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-26T13:42:12.093278860Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
 public class PrefabElementDimensionalWidth {
 
   private BigDecimal min;
