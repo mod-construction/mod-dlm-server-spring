@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("PrefabElement_performance_acousticProperties")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-26T14:53:23.453672070Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-29T09:26:17.255146440Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
 public class PrefabElementPerformanceAcousticProperties {
 
   private String soundInsulationRating;
