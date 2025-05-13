@@ -35,7 +35,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-13T09:20:21.799406193Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-13T10:18:54.063896910Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 @Validated
 @Tag(name = "element", description = "the element API")
 public interface ElementApi {
