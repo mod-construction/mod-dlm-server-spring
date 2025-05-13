@@ -4,7 +4,6 @@ import java.net.URI;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
 import construction.mod.dlm.model.PrefabElementAestheticAndCustomizationOptions;
 import construction.mod.dlm.model.PrefabElementBoundingBox;
 import construction.mod.dlm.model.PrefabElementDimensional;
@@ -16,9 +15,11 @@ import construction.mod.dlm.model.PrefabElementMaterial;
 import construction.mod.dlm.model.PrefabElementPerformance;
 import construction.mod.dlm.model.PrefabElementStructuralProperties;
 import construction.mod.dlm.model.PrefabElementSustainability;
+import construction.mod.dlm.model.ProductCategory;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import javax.validation.Valid;
@@ -34,7 +35,7 @@ import javax.annotation.Generated;
  */
 
 @Schema(name = "ElementCreate", description = "An element to create.")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-29T10:27:18.086007090Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-13T09:20:21.799406193Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class ElementCreate {
 
   private String name;
@@ -46,153 +47,27 @@ public class ElementCreate {
   @Valid
   private List<String> images = new ArrayList<>();
 
-  /**
-   * Gets or Sets buildingSystem
-   */
-  public enum BuildingSystemEnum {
-    WALL("Wall"),
-    
-    BALCONY("Balcony"),
-    
-    POD("Pod"),
-    
-    FRAME("Frame"),
-    
-    FACADE("Facade"),
-    
-    FLOORS("Floors"),
-    
-    MODULES("Modules"),
-    
-    PLANTS("Plants"),
-    
-    ROOFS("Roofs"),
-    
-    STAIRS("Stairs");
-
-    private String value;
-
-    BuildingSystemEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static BuildingSystemEnum fromValue(String value) {
-      for (BuildingSystemEnum b : BuildingSystemEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-  private BuildingSystemEnum buildingSystem;
-
-  /**
-   * Gets or Sets productCategory
-   */
-  public enum ProductCategoryEnum {
-    BOARDING("Boarding"),
-    
-    SOLID_WALL_PANELS("Solid Wall Panels"),
-    
-    CLOSED_WALL_PANELS("Closed Wall Panels"),
-    
-    TWINWALL("Twinwall"),
-    
-    OPEN_WALL_PANELS("Open Wall Panels"),
-    
-    STRUCTURAL_INSULATED_PANELS_SIPS_("Structural Insulated Panels (SIPs)"),
-    
-    INSULATED_CONCRETE_PANELS("Insulated Concrete Panels"),
-    
-    PREFABRICATED_BALCONY("Prefabricated Balcony"),
-    
-    POD("Pod"),
-    
-    WHOLE_BUILDING_SYSTEM("Whole Building System"),
-    
-    STRUCTURAL_FRAME("Structural Frame"),
-    
-    FACADE_SYSTEM("Facade System"),
-    
-    HOLLOWCORE_FLOOR("Hollowcore Floor"),
-    
-    CONCRETE_LATTICE_FLOOR("Concrete Lattice Floor"),
-    
-    FLOOR_CASSETTES("Floor Cassettes"),
-    
-    SOLID_FLOOR_PANELS("Solid Floor Panels"),
-    
-    VOLUMETRIC_MODULE("Volumetric module"),
-    
-    PREFABRICATED_PLANT("Prefabricated Plant"),
-    
-    ROOF_PANEL("Roof Panel"),
-    
-    ROOF_TRUSS("Roof Truss"),
-    
-    PREFABRICATED_STAIRS("Prefabricated Stairs");
-
-    private String value;
-
-    ProductCategoryEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static ProductCategoryEnum fromValue(String value) {
-      for (ProductCategoryEnum b : ProductCategoryEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-  private ProductCategoryEnum productCategory;
+  private ProductCategory productCategory;
 
   private PrefabElementMaterial material;
 
   private PrefabElementDimensional dimensional;
 
-  private PrefabElementStructuralProperties structuralProperties;
+  private @Nullable PrefabElementStructuralProperties structuralProperties;
 
-  private PrefabElementPerformance performance;
+  private @Nullable PrefabElementPerformance performance;
 
-  private PrefabElementSustainability sustainability;
+  private @Nullable PrefabElementSustainability sustainability;
 
-  private PrefabElementDocumentationAndCompliance documentationAndCompliance;
+  private @Nullable PrefabElementDocumentationAndCompliance documentationAndCompliance;
 
-  private PrefabElementInstallationAndConnectivity installationAndConnectivity;
+  private @Nullable PrefabElementInstallationAndConnectivity installationAndConnectivity;
 
-  private PrefabElementLifecycleAndMaintenance lifecycleAndMaintenance;
+  private @Nullable PrefabElementLifecycleAndMaintenance lifecycleAndMaintenance;
 
-  private PrefabElementAestheticAndCustomizationOptions aestheticAndCustomizationOptions;
+  private @Nullable PrefabElementAestheticAndCustomizationOptions aestheticAndCustomizationOptions;
 
-  private PrefabElementEconomicFactors economicFactors;
+  private @Nullable PrefabElementEconomicFactors economicFactors;
 
   public ElementCreate() {
     super();
@@ -201,12 +76,11 @@ public class ElementCreate {
   /**
    * Constructor with only required parameters
    */
-  public ElementCreate(String name, String description, PrefabElementBoundingBox boundingBox, List<String> images, BuildingSystemEnum buildingSystem, ProductCategoryEnum productCategory, PrefabElementMaterial material, PrefabElementDimensional dimensional) {
+  public ElementCreate(String name, String description, PrefabElementBoundingBox boundingBox, List<String> images, ProductCategory productCategory, PrefabElementMaterial material, PrefabElementDimensional dimensional) {
     this.name = name;
     this.description = description;
     this.boundingBox = boundingBox;
     this.images = images;
-    this.buildingSystem = buildingSystem;
     this.productCategory = productCategory;
     this.material = material;
     this.dimensional = dimensional;
@@ -300,27 +174,7 @@ public class ElementCreate {
     this.images = images;
   }
 
-  public ElementCreate buildingSystem(BuildingSystemEnum buildingSystem) {
-    this.buildingSystem = buildingSystem;
-    return this;
-  }
-
-  /**
-   * Get buildingSystem
-   * @return buildingSystem
-   */
-  @NotNull 
-  @Schema(name = "buildingSystem", requiredMode = Schema.RequiredMode.REQUIRED)
-  @JsonProperty("buildingSystem")
-  public BuildingSystemEnum getBuildingSystem() {
-    return buildingSystem;
-  }
-
-  public void setBuildingSystem(BuildingSystemEnum buildingSystem) {
-    this.buildingSystem = buildingSystem;
-  }
-
-  public ElementCreate productCategory(ProductCategoryEnum productCategory) {
+  public ElementCreate productCategory(ProductCategory productCategory) {
     this.productCategory = productCategory;
     return this;
   }
@@ -329,14 +183,14 @@ public class ElementCreate {
    * Get productCategory
    * @return productCategory
    */
-  @NotNull 
+  @NotNull @Valid 
   @Schema(name = "productCategory", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("productCategory")
-  public ProductCategoryEnum getProductCategory() {
+  public ProductCategory getProductCategory() {
     return productCategory;
   }
 
-  public void setProductCategory(ProductCategoryEnum productCategory) {
+  public void setProductCategory(ProductCategory productCategory) {
     this.productCategory = productCategory;
   }
 
@@ -553,7 +407,6 @@ public class ElementCreate {
         Objects.equals(this.description, elementCreate.description) &&
         Objects.equals(this.boundingBox, elementCreate.boundingBox) &&
         Objects.equals(this.images, elementCreate.images) &&
-        Objects.equals(this.buildingSystem, elementCreate.buildingSystem) &&
         Objects.equals(this.productCategory, elementCreate.productCategory) &&
         Objects.equals(this.material, elementCreate.material) &&
         Objects.equals(this.dimensional, elementCreate.dimensional) &&
@@ -569,7 +422,7 @@ public class ElementCreate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, boundingBox, images, buildingSystem, productCategory, material, dimensional, structuralProperties, performance, sustainability, documentationAndCompliance, installationAndConnectivity, lifecycleAndMaintenance, aestheticAndCustomizationOptions, economicFactors);
+    return Objects.hash(name, description, boundingBox, images, productCategory, material, dimensional, structuralProperties, performance, sustainability, documentationAndCompliance, installationAndConnectivity, lifecycleAndMaintenance, aestheticAndCustomizationOptions, economicFactors);
   }
 
   @Override
@@ -580,7 +433,6 @@ public class ElementCreate {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    boundingBox: ").append(toIndentedString(boundingBox)).append("\n");
     sb.append("    images: ").append(toIndentedString(images)).append("\n");
-    sb.append("    buildingSystem: ").append(toIndentedString(buildingSystem)).append("\n");
     sb.append("    productCategory: ").append(toIndentedString(productCategory)).append("\n");
     sb.append("    material: ").append(toIndentedString(material)).append("\n");
     sb.append("    dimensional: ").append(toIndentedString(dimensional)).append("\n");

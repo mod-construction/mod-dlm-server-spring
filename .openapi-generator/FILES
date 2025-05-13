@@ -28,3 +28,4 @@ src/main/java/construction/mod/dlm/model/PrefabElementPerformanceAcousticPropert
 src/main/java/construction/mod/dlm/model/PrefabElementStructuralProperties.java
 src/main/java/construction/mod/dlm/model/PrefabElementStructuralPropertiesLoadBearingCapacity.java
 src/main/java/construction/mod/dlm/model/PrefabElementSustainability.java
+src/main/java/construction/mod/dlm/model/ProductCategory.java

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import construction.mod.dlm.model.PrefabElementPerformanceAcousticProperties;
 import java.math.BigDecimal;
+import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import javax.validation.Valid;
@@ -23,7 +24,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("PrefabElement_performance")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-29T10:27:18.086007090Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-13T09:20:21.799406193Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementPerformance {
 
   /**
@@ -52,7 +53,7 @@ public class PrefabElementPerformance {
     
     _4_HOUR("4-hour");
 
-    private String value;
+    private final String value;
 
     ResistanceToFireClassificationEnum(String value) {
       this.value = value;
@@ -83,7 +84,7 @@ public class PrefabElementPerformance {
 
   private BigDecimal thermalTransmittance;
 
-  private PrefabElementPerformanceAcousticProperties acousticProperties;
+  private @Nullable PrefabElementPerformanceAcousticProperties acousticProperties;
 
   public PrefabElementPerformance() {
     super();

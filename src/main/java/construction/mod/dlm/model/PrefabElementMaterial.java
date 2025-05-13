@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import javax.validation.Valid;
@@ -21,7 +22,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("PrefabElement_material")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-29T10:27:18.086007090Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-13T09:20:21.799406193Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementMaterial {
 
   /**
@@ -38,7 +39,7 @@ public class PrefabElementMaterial {
     
     OTHER("Other");
 
-    private String value;
+    private final String value;
 
     FinishMaterialEnum(String value) {
       this.value = value;
@@ -81,7 +82,7 @@ public class PrefabElementMaterial {
     
     OTHER("Other");
 
-    private String value;
+    private final String value;
 
     StructuralMaterialEnum(String value) {
       this.value = value;

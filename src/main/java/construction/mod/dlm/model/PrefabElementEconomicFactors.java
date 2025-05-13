@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.math.BigDecimal;
+import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import javax.validation.Valid;
@@ -21,12 +22,12 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("PrefabElement_economicFactors")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-29T10:27:18.086007090Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-13T09:20:21.799406193Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementEconomicFactors {
 
-  private BigDecimal costPerUnit;
+  private @Nullable BigDecimal costPerUnit;
 
-  private String manufacturingLeadTime;
+  private @Nullable String manufacturingLeadTime;
 
   public PrefabElementEconomicFactors costPerUnit(BigDecimal costPerUnit) {
     this.costPerUnit = costPerUnit;

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import construction.mod.dlm.model.PrefabElementStructuralPropertiesLoadBearingCapacity;
+import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import javax.validation.Valid;
@@ -22,24 +23,24 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("PrefabElement_structuralProperties")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-29T10:27:18.086007090Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-13T09:20:21.799406193Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementStructuralProperties {
 
-  private PrefabElementStructuralPropertiesLoadBearingCapacity loadBearingCapacity;
+  private @Nullable PrefabElementStructuralPropertiesLoadBearingCapacity loadBearingCapacity;
 
   /**
    * Gets or Sets seismicResistance
    */
   public enum SeismicResistanceEnum {
-    _1("Zone 1"),
+    ZONE_1("Zone 1"),
     
-    _2("Zone 2"),
+    ZONE_2("Zone 2"),
     
-    _3("Zone 3"),
+    ZONE_3("Zone 3"),
     
-    _4("Zone 4");
+    ZONE_4("Zone 4");
 
-    private String value;
+    private final String value;
 
     SeismicResistanceEnum(String value) {
       this.value = value;
@@ -66,21 +67,21 @@ public class PrefabElementStructuralProperties {
     }
   }
 
-  private SeismicResistanceEnum seismicResistance;
+  private @Nullable SeismicResistanceEnum seismicResistance;
 
   /**
    * Gets or Sets windLoadResistance
    */
   public enum WindLoadResistanceEnum {
-    A("Class A"),
+    CLASS_A("Class A"),
     
-    B("Class B"),
+    CLASS_B("Class B"),
     
-    C("Class C"),
+    CLASS_C("Class C"),
     
-    D("Class D");
+    CLASS_D("Class D");
 
-    private String value;
+    private final String value;
 
     WindLoadResistanceEnum(String value) {
       this.value = value;
@@ -107,7 +108,7 @@ public class PrefabElementStructuralProperties {
     }
   }
 
-  private WindLoadResistanceEnum windLoadResistance;
+  private @Nullable WindLoadResistanceEnum windLoadResistance;
 
   public PrefabElementStructuralProperties loadBearingCapacity(PrefabElementStructuralPropertiesLoadBearingCapacity loadBearingCapacity) {
     this.loadBearingCapacity = loadBearingCapacity;

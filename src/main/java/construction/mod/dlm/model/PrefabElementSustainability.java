@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import javax.validation.Valid;
@@ -21,7 +22,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("PrefabElement_sustainability")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-07-29T10:27:18.086007090Z[Etc/UTC]", comments = "Generator version: 7.8.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-13T09:20:21.799406193Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementSustainability {
 
   private String countryOfManufacturing;
@@ -40,7 +41,7 @@ public class PrefabElementSustainability {
     
     D("D");
 
-    private String value;
+    private final String value;
 
     ClassificationEnum(String value) {
       this.value = value;
@@ -81,7 +82,7 @@ public class PrefabElementSustainability {
     
     HIGH("High");
 
-    private String value;
+    private final String value;
 
     VoCEmissionsEnum(String value) {
       this.value = value;
@@ -108,7 +109,7 @@ public class PrefabElementSustainability {
     }
   }
 
-  private VoCEmissionsEnum voCEmissions;
+  private @Nullable VoCEmissionsEnum voCEmissions;
 
   /**
    * Gets or Sets recyclability
@@ -124,7 +125,7 @@ public class PrefabElementSustainability {
     
     _100_("100%");
 
-    private String value;
+    private final String value;
 
     RecyclabilityEnum(String value) {
       this.value = value;
@@ -151,7 +152,7 @@ public class PrefabElementSustainability {
     }
   }
 
-  private RecyclabilityEnum recyclability;
+  private @Nullable RecyclabilityEnum recyclability;
 
   /**
    * Gets or Sets energyEfficiency
@@ -173,7 +174,7 @@ public class PrefabElementSustainability {
     
     LEED_PLATINUM("LEED Platinum");
 
-    private String value;
+    private final String value;
 
     EnergyEfficiencyEnum(String value) {
       this.value = value;
@@ -200,7 +201,7 @@ public class PrefabElementSustainability {
     }
   }
 
-  private EnergyEfficiencyEnum energyEfficiency;
+  private @Nullable EnergyEfficiencyEnum energyEfficiency;
 
   public PrefabElementSustainability() {
     super();
