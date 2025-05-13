@@ -21,8 +21,8 @@ You can always find the most up-to-date API documentation here: [mod-dlm API Doc
 
 The server is generated automatically using the  [OpenAPI Generator](https://openapi-generator.tech).
 
-- API version: 1.0.8
-- Build date: 2025-05-13T10:18:54.063896910Z[Etc/UTC]
+- API version: 1.0.10
+- Build date: 2025-05-13T12:46:33.870658580Z[Etc/UTC]
 - Generator version: 7.14.0-SNAPSHOT
 - Build package: org.openapitools.codegen.languages.SpringCodegen
 
@@ -54,7 +54,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>construction.mod</groupId>
     <artifactId>dlm-server</artifactId>
-    <version>1.0.8</version>
+    <version>1.0.10</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -64,7 +64,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "construction.mod:dlm-server:1.0.8"
+compile "construction.mod:dlm-server:1.0.10"
 ```
 
 ### Others
@@ -75,5 +75,5 @@ mvn package
 
 Then manually install the following JARs:
 
-* target/dlm-server-1.0.8.jar
+* target/dlm-server-1.0.10.jar
 * target/lib/*.jar
