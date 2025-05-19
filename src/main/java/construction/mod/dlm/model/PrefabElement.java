@@ -36,7 +36,7 @@ import javax.annotation.Generated;
  */
 
 @Schema(name = "PrefabElement", description = "Prefab Element")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-13T12:46:33.870658580Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-19T08:58:57.598441451Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElement {
 
   private UUID id;
@@ -119,7 +119,7 @@ public class PrefabElement {
    * Get name
    * @return name
    */
-  @NotNull 
+  @NotNull @Size(min = 1) 
   @Schema(name = "name", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("name")
   public String getName() {
@@ -139,7 +139,7 @@ public class PrefabElement {
    * Get description
    * @return description
    */
-  @NotNull 
+  @NotNull @Size(min = 1) 
   @Schema(name = "description", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("description")
   public String getDescription() {
@@ -187,7 +187,7 @@ public class PrefabElement {
    * Get images
    * @return images
    */
-  @NotNull 
+  @NotNull @Size(min = 1) 
   @Schema(name = "images", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("images")
   public List<String> getImages() {

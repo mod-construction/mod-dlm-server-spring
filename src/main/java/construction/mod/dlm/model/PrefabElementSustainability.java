@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("PrefabElement_sustainability")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-13T12:46:33.870658580Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-19T08:58:57.598441451Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementSustainability {
 
   private String countryOfManufacturing;
