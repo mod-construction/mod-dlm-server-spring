@@ -12,6 +12,7 @@ src/main/java/construction/mod/dlm/api/ElementApiClient.java
 src/main/java/construction/mod/dlm/configuration/ApiKeyRequestInterceptor.java
 src/main/java/construction/mod/dlm/configuration/ClientConfiguration.java
 src/main/java/construction/mod/dlm/model/ElementCreate.java
+src/main/java/construction/mod/dlm/model/InstallationAndConnectivity.java
 src/main/java/construction/mod/dlm/model/PrefabElement.java
 src/main/java/construction/mod/dlm/model/PrefabElementAestheticAndCustomizationOptions.java
 src/main/java/construction/mod/dlm/model/PrefabElementBoundingBox.java
@@ -20,12 +21,17 @@ src/main/java/construction/mod/dlm/model/PrefabElementDimensionalWidth.java
 src/main/java/construction/mod/dlm/model/PrefabElementDocumentationAndCompliance.java
 src/main/java/construction/mod/dlm/model/PrefabElementDocumentationAndComplianceCertifications.java
 src/main/java/construction/mod/dlm/model/PrefabElementEconomicFactors.java
-src/main/java/construction/mod/dlm/model/PrefabElementInstallationAndConnectivity.java
 src/main/java/construction/mod/dlm/model/PrefabElementLifecycleAndMaintenance.java
 src/main/java/construction/mod/dlm/model/PrefabElementMaterial.java
 src/main/java/construction/mod/dlm/model/PrefabElementPerformance.java
 src/main/java/construction/mod/dlm/model/PrefabElementPerformanceAcousticProperties.java
+src/main/java/construction/mod/dlm/model/PrefabElementPerformanceFireResistance.java
+src/main/java/construction/mod/dlm/model/PrefabElementProductCategory.java
+src/main/java/construction/mod/dlm/model/PrefabElementReuseAndCircularity.java
 src/main/java/construction/mod/dlm/model/PrefabElementStructuralProperties.java
+src/main/java/construction/mod/dlm/model/PrefabElementStructuralPropertiesDeflectionLimit.java
 src/main/java/construction/mod/dlm/model/PrefabElementStructuralPropertiesLoadBearingCapacity.java
+src/main/java/construction/mod/dlm/model/PrefabElementStructuralPropertiesSeismicResistance.java
+src/main/java/construction/mod/dlm/model/PrefabElementStructuralPropertiesWindLoadResistance.java
 src/main/java/construction/mod/dlm/model/PrefabElementSustainability.java
-src/main/java/construction/mod/dlm/model/ProductCategory.java
+src/main/java/construction/mod/dlm/model/PrefabElementVersionMetadata.java

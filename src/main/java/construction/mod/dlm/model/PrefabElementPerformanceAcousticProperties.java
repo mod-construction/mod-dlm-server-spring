@@ -5,6 +5,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.math.BigDecimal;
 import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
@@ -21,12 +22,12 @@ import javax.annotation.Generated;
  */
 
 @JsonTypeName("PrefabElement_performance_acousticProperties")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-19T08:58:57.598441451Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T12:37:58.764795587Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementPerformanceAcousticProperties {
 
-  private String soundInsulationRating;
+  private BigDecimal weightedSoundReductionIndex;
 
-  private String acousticPerformance;
+  private @Nullable BigDecimal spectrumAdaptationTerm;
 
   public PrefabElementPerformanceAcousticProperties() {
     super();
@@ -35,49 +36,48 @@ public class PrefabElementPerformanceAcousticProperties {
   /**
    * Constructor with only required parameters
    */
-  public PrefabElementPerformanceAcousticProperties(String soundInsulationRating, String acousticPerformance) {
-    this.soundInsulationRating = soundInsulationRating;
-    this.acousticPerformance = acousticPerformance;
+  public PrefabElementPerformanceAcousticProperties(BigDecimal weightedSoundReductionIndex) {
+    this.weightedSoundReductionIndex = weightedSoundReductionIndex;
   }
 
-  public PrefabElementPerformanceAcousticProperties soundInsulationRating(String soundInsulationRating) {
-    this.soundInsulationRating = soundInsulationRating;
+  public PrefabElementPerformanceAcousticProperties weightedSoundReductionIndex(BigDecimal weightedSoundReductionIndex) {
+    this.weightedSoundReductionIndex = weightedSoundReductionIndex;
     return this;
   }
 
   /**
-   * Get soundInsulationRating
-   * @return soundInsulationRating
+   * Rw value in dB (ISO 717-1)
+   * @return weightedSoundReductionIndex
    */
-  @NotNull 
-  @Schema(name = "soundInsulationRating", requiredMode = Schema.RequiredMode.REQUIRED)
-  @JsonProperty("soundInsulationRating")
-  public String getSoundInsulationRating() {
-    return soundInsulationRating;
+  @NotNull @Valid 
+  @Schema(name = "weightedSoundReductionIndex", description = "Rw value in dB (ISO 717-1)", requiredMode = Schema.RequiredMode.REQUIRED)
+  @JsonProperty("weightedSoundReductionIndex")
+  public BigDecimal getWeightedSoundReductionIndex() {
+    return weightedSoundReductionIndex;
   }
 
-  public void setSoundInsulationRating(String soundInsulationRating) {
-    this.soundInsulationRating = soundInsulationRating;
+  public void setWeightedSoundReductionIndex(BigDecimal weightedSoundReductionIndex) {
+    this.weightedSoundReductionIndex = weightedSoundReductionIndex;
   }
 
-  public PrefabElementPerformanceAcousticProperties acousticPerformance(String acousticPerformance) {
-    this.acousticPerformance = acousticPerformance;
+  public PrefabElementPerformanceAcousticProperties spectrumAdaptationTerm(BigDecimal spectrumAdaptationTerm) {
+    this.spectrumAdaptationTerm = spectrumAdaptationTerm;
     return this;
   }
 
   /**
-   * Get acousticPerformance
-   * @return acousticPerformance
+   * Ctr value in dB (optional, ISO 717-1)
+   * @return spectrumAdaptationTerm
    */
-  @NotNull 
-  @Schema(name = "acousticPerformance", requiredMode = Schema.RequiredMode.REQUIRED)
-  @JsonProperty("acousticPerformance")
-  public String getAcousticPerformance() {
-    return acousticPerformance;
+  @Valid 
+  @Schema(name = "spectrumAdaptationTerm", description = "Ctr value in dB (optional, ISO 717-1)", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty("spectrumAdaptationTerm")
+  public BigDecimal getSpectrumAdaptationTerm() {
+    return spectrumAdaptationTerm;
   }
 
-  public void setAcousticPerformance(String acousticPerformance) {
-    this.acousticPerformance = acousticPerformance;
+  public void setSpectrumAdaptationTerm(BigDecimal spectrumAdaptationTerm) {
+    this.spectrumAdaptationTerm = spectrumAdaptationTerm;
   }
 
   @Override
@@ -89,21 +89,21 @@ public class PrefabElementPerformanceAcousticProperties {
       return false;
     }
     PrefabElementPerformanceAcousticProperties prefabElementPerformanceAcousticProperties = (PrefabElementPerformanceAcousticProperties) o;
-    return Objects.equals(this.soundInsulationRating, prefabElementPerformanceAcousticProperties.soundInsulationRating) &&
-        Objects.equals(this.acousticPerformance, prefabElementPerformanceAcousticProperties.acousticPerformance);
+    return Objects.equals(this.weightedSoundReductionIndex, prefabElementPerformanceAcousticProperties.weightedSoundReductionIndex) &&
+        Objects.equals(this.spectrumAdaptationTerm, prefabElementPerformanceAcousticProperties.spectrumAdaptationTerm);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(soundInsulationRating, acousticPerformance);
+    return Objects.hash(weightedSoundReductionIndex, spectrumAdaptationTerm);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PrefabElementPerformanceAcousticProperties {\n");
-    sb.append("    soundInsulationRating: ").append(toIndentedString(soundInsulationRating)).append("\n");
-    sb.append("    acousticPerformance: ").append(toIndentedString(acousticPerformance)).append("\n");
+    sb.append("    weightedSoundReductionIndex: ").append(toIndentedString(weightedSoundReductionIndex)).append("\n");
+    sb.append("    spectrumAdaptationTerm: ").append(toIndentedString(spectrumAdaptationTerm)).append("\n");
     sb.append("}");
     return sb.toString();
   }

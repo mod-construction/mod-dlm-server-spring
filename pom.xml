@@ -4,7 +4,7 @@
     <artifactId>dlm-server</artifactId>
     <packaging>jar</packaging>
     <name>dlm-server</name>
-    <version>1.0.11</version>
+    <version>1.0.12</version>
     <properties>
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>

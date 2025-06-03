@@ -5,6 +5,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.math.BigDecimal;
 import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
@@ -17,36 +18,37 @@ import java.util.*;
 import javax.annotation.Generated;
 
 /**
- * PrefabElementLifecycleAndMaintenance
+ * Optional data describing maintenance schedules or expected lifecycle.
  */
 
+@Schema(name = "PrefabElement_lifecycleAndMaintenance", description = "Optional data describing maintenance schedules or expected lifecycle.")
 @JsonTypeName("PrefabElement_lifecycleAndMaintenance")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-19T08:58:57.598441451Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T12:37:58.764795587Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementLifecycleAndMaintenance {
 
-  private @Nullable String expectedLifespan;
+  private @Nullable BigDecimal expectedLifespan;
 
   private @Nullable String maintenanceRequirements;
 
   private @Nullable String warranty;
 
-  public PrefabElementLifecycleAndMaintenance expectedLifespan(String expectedLifespan) {
+  public PrefabElementLifecycleAndMaintenance expectedLifespan(BigDecimal expectedLifespan) {
     this.expectedLifespan = expectedLifespan;
     return this;
   }
 
   /**
-   * Get expectedLifespan
+   * Expected lifespan of the prefab element in years.
    * @return expectedLifespan
    */
-  
-  @Schema(name = "expectedLifespan", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @Valid 
+  @Schema(name = "expectedLifespan", example = "50", description = "Expected lifespan of the prefab element in years.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("expectedLifespan")
-  public String getExpectedLifespan() {
+  public BigDecimal getExpectedLifespan() {
     return expectedLifespan;
   }
 
-  public void setExpectedLifespan(String expectedLifespan) {
+  public void setExpectedLifespan(BigDecimal expectedLifespan) {
     this.expectedLifespan = expectedLifespan;
   }
 
@@ -56,11 +58,11 @@ public class PrefabElementLifecycleAndMaintenance {
   }
 
   /**
-   * Get maintenanceRequirements
+   * Maintenance requirements of the prefab element.
    * @return maintenanceRequirements
    */
   
-  @Schema(name = "maintenanceRequirements", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @Schema(name = "maintenanceRequirements", example = "Regular cleaning and inspection.", description = "Maintenance requirements of the prefab element.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("maintenanceRequirements")
   public String getMaintenanceRequirements() {
     return maintenanceRequirements;
@@ -76,11 +78,11 @@ public class PrefabElementLifecycleAndMaintenance {
   }
 
   /**
-   * Get warranty
+   * Warranty information of the prefab element.
    * @return warranty
    */
   
-  @Schema(name = "warranty", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @Schema(name = "warranty", example = "10 years warranty.", description = "Warranty information of the prefab element.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("warranty")
   public String getWarranty() {
     return warranty;

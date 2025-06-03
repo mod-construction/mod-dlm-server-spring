@@ -18,15 +18,16 @@ import java.util.*;
 import javax.annotation.Generated;
 
 /**
- * PrefabElementMaterial
+ * Material and physical properties of the prefab element.
  */
 
+@Schema(name = "PrefabElement_material", description = "Material and physical properties of the prefab element.")
 @JsonTypeName("PrefabElement_material")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-19T08:58:57.598441451Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T12:37:58.764795587Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementMaterial {
 
   /**
-   * Gets or Sets finishMaterial
+   * Primary material of the product element.
    */
   public enum FinishMaterialEnum {
     TIMBER("Timber"),
@@ -69,7 +70,7 @@ public class PrefabElementMaterial {
   private FinishMaterialEnum finishMaterial;
 
   /**
-   * Gets or Sets structuralMaterial
+   * Primary material of the product element.
    */
   public enum StructuralMaterialEnum {
     TIMBER("Timber"),
@@ -129,11 +130,11 @@ public class PrefabElementMaterial {
   }
 
   /**
-   * Get finishMaterial
+   * Primary material of the product element.
    * @return finishMaterial
    */
   @NotNull 
-  @Schema(name = "finishMaterial", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "finishMaterial", example = "Steel", description = "Primary material of the product element.", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("finishMaterial")
   public FinishMaterialEnum getFinishMaterial() {
     return finishMaterial;
@@ -149,11 +150,11 @@ public class PrefabElementMaterial {
   }
 
   /**
-   * Get structuralMaterial
+   * Primary material of the product element.
    * @return structuralMaterial
    */
   @NotNull 
-  @Schema(name = "structuralMaterial", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "structuralMaterial", example = "Steel", description = "Primary material of the product element.", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("structuralMaterial")
   public StructuralMaterialEnum getStructuralMaterial() {
     return structuralMaterial;

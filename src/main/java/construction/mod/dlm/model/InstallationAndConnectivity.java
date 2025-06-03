@@ -4,8 +4,8 @@ import java.net.URI;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.math.BigDecimal;
 import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
@@ -18,15 +18,15 @@ import java.util.*;
 import javax.annotation.Generated;
 
 /**
- * PrefabElementInstallationAndConnectivity
+ * Describes how the prefab element is installed and what structural systems it is compatible with.
  */
 
-@JsonTypeName("PrefabElement_installationAndConnectivity")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-19T08:58:57.598441451Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
-public class PrefabElementInstallationAndConnectivity {
+@Schema(name = "InstallationAndConnectivity", description = "Describes how the prefab element is installed and what structural systems it is compatible with.")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T12:37:58.764795587Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+public class InstallationAndConnectivity {
 
   /**
-   * Gets or Sets connectionType
+   * Type of connection used for assembly, including mechanical, chemical, and modular methods.
    */
   public enum ConnectionTypeEnum {
     BOLT_ON("Bolt-on"),
@@ -37,7 +37,13 @@ public class PrefabElementInstallationAndConnectivity {
     
     ADHESIVE("Adhesive"),
     
-    MORTAR("Mortar");
+    MORTAR("Mortar"),
+    
+    SNAP_FIT("Snap-fit"),
+    
+    PLUG_AND_PLAY("Plug-and-Play"),
+    
+    DRY_JOINT("Dry Joint");
 
     private final String value;
 
@@ -68,10 +74,10 @@ public class PrefabElementInstallationAndConnectivity {
 
   private @Nullable ConnectionTypeEnum connectionType;
 
-  private @Nullable String installationTime;
+  private BigDecimal installationTime;
 
   /**
-   * Gets or Sets compatibility
+   * Structural systems compatible with the prefab element, supporting integration into various construction assemblies.
    */
   public enum CompatibilityEnum {
     STEEL_FRAME("Steel Frame"),
@@ -86,7 +92,13 @@ public class PrefabElementInstallationAndConnectivity {
     
     GLASS_FACADES("Glass Facades"),
     
-    COMPOSITE_MATERIALS("Composite Materials");
+    COMPOSITE_MATERIALS("Composite Materials"),
+    
+    CLT("CLT"),
+    
+    LIGHT_GAUGE_STEEL("Light Gauge Steel"),
+    
+    MASONRY_INFILL("Masonry Infill");
 
     private final String value;
 
@@ -117,17 +129,28 @@ public class PrefabElementInstallationAndConnectivity {
 
   private @Nullable CompatibilityEnum compatibility;
 
-  public PrefabElementInstallationAndConnectivity connectionType(ConnectionTypeEnum connectionType) {
+  public InstallationAndConnectivity() {
+    super();
+  }
+
+  /**
+   * Constructor with only required parameters
+   */
+  public InstallationAndConnectivity(BigDecimal installationTime) {
+    this.installationTime = installationTime;
+  }
+
+  public InstallationAndConnectivity connectionType(ConnectionTypeEnum connectionType) {
     this.connectionType = connectionType;
     return this;
   }
 
   /**
-   * Get connectionType
+   * Type of connection used for assembly, including mechanical, chemical, and modular methods.
    * @return connectionType
    */
   
-  @Schema(name = "connectionType", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @Schema(name = "connectionType", example = "Bolt-on", description = "Type of connection used for assembly, including mechanical, chemical, and modular methods.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("connectionType")
   public ConnectionTypeEnum getConnectionType() {
     return connectionType;
@@ -137,37 +160,38 @@ public class PrefabElementInstallationAndConnectivity {
     this.connectionType = connectionType;
   }
 
-  public PrefabElementInstallationAndConnectivity installationTime(String installationTime) {
+  public InstallationAndConnectivity installationTime(BigDecimal installationTime) {
     this.installationTime = installationTime;
     return this;
   }
 
   /**
-   * Get installationTime
+   * Estimated installation time in minutes
+   * minimum: 0
    * @return installationTime
    */
-  
-  @Schema(name = "installationTime", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @NotNull @Valid @DecimalMin("0") 
+  @Schema(name = "installationTime", description = "Estimated installation time in minutes", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("installationTime")
-  public String getInstallationTime() {
+  public BigDecimal getInstallationTime() {
     return installationTime;
   }
 
-  public void setInstallationTime(String installationTime) {
+  public void setInstallationTime(BigDecimal installationTime) {
     this.installationTime = installationTime;
   }
 
-  public PrefabElementInstallationAndConnectivity compatibility(CompatibilityEnum compatibility) {
+  public InstallationAndConnectivity compatibility(CompatibilityEnum compatibility) {
     this.compatibility = compatibility;
     return this;
   }
 
   /**
-   * Get compatibility
+   * Structural systems compatible with the prefab element, supporting integration into various construction assemblies.
    * @return compatibility
    */
   
-  @Schema(name = "compatibility", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @Schema(name = "compatibility", example = "Concrete Structure", description = "Structural systems compatible with the prefab element, supporting integration into various construction assemblies.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("compatibility")
   public CompatibilityEnum getCompatibility() {
     return compatibility;
@@ -185,10 +209,10 @@ public class PrefabElementInstallationAndConnectivity {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PrefabElementInstallationAndConnectivity prefabElementInstallationAndConnectivity = (PrefabElementInstallationAndConnectivity) o;
-    return Objects.equals(this.connectionType, prefabElementInstallationAndConnectivity.connectionType) &&
-        Objects.equals(this.installationTime, prefabElementInstallationAndConnectivity.installationTime) &&
-        Objects.equals(this.compatibility, prefabElementInstallationAndConnectivity.compatibility);
+    InstallationAndConnectivity installationAndConnectivity = (InstallationAndConnectivity) o;
+    return Objects.equals(this.connectionType, installationAndConnectivity.connectionType) &&
+        Objects.equals(this.installationTime, installationAndConnectivity.installationTime) &&
+        Objects.equals(this.compatibility, installationAndConnectivity.compatibility);
   }
 
   @Override
@@ -199,7 +223,7 @@ public class PrefabElementInstallationAndConnectivity {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PrefabElementInstallationAndConnectivity {\n");
+    sb.append("class InstallationAndConnectivity {\n");
     sb.append("    connectionType: ").append(toIndentedString(connectionType)).append("\n");
     sb.append("    installationTime: ").append(toIndentedString(installationTime)).append("\n");
     sb.append("    compatibility: ").append(toIndentedString(compatibility)).append("\n");

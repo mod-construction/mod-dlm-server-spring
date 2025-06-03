@@ -18,12 +18,12 @@ import java.util.*;
 import javax.annotation.Generated;
 
 /**
- * The bounding box of an element in millimeters.
+ * 3D bounding dimensions of the prefab element, defining its spatial envelope.
  */
 
-@Schema(name = "PrefabElement_boundingBox", description = "The bounding box of an element in millimeters.")
+@Schema(name = "PrefabElement_boundingBox", description = "3D bounding dimensions of the prefab element, defining its spatial envelope.")
 @JsonTypeName("PrefabElement_boundingBox")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-19T08:58:57.598441451Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T12:37:58.764795587Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementBoundingBox {
 
   private BigDecimal width;

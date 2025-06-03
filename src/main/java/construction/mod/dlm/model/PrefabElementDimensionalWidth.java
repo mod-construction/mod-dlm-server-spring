@@ -18,11 +18,12 @@ import java.util.*;
 import javax.annotation.Generated;
 
 /**
- * PrefabElementDimensionalWidth
+ * A range of dimensions in millimeters
  */
 
+@Schema(name = "PrefabElement_dimensional_width", description = "A range of dimensions in millimeters")
 @JsonTypeName("PrefabElement_dimensional_width")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-19T08:58:57.598441451Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T12:37:58.764795587Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementDimensionalWidth {
 
   private BigDecimal min;

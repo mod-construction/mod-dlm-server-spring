@@ -4,6 +4,7 @@ import java.net.URI;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -17,15 +18,16 @@ import java.util.*;
 import javax.annotation.Generated;
 
 /**
- * Product Category
+ * Product category classification (e.g., Wall Panels, Stairs, Facade Elements).
  */
 
-@Schema(name = "ProductCategory", description = "Product Category")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-19T08:58:57.598441451Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
-public class ProductCategory {
+@Schema(name = "PrefabElement_productCategory", description = "Product category classification (e.g., Wall Panels, Stairs, Facade Elements).")
+@JsonTypeName("PrefabElement_productCategory")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T12:37:58.764795587Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+public class PrefabElementProductCategory {
 
   /**
-   * Gets or Sets category
+   * Specific product category within building systems.
    */
   public enum CategoryEnum {
     BOARDING("Boarding"),
@@ -100,7 +102,7 @@ public class ProductCategory {
   private CategoryEnum category;
 
   /**
-   * Gets or Sets buildingSystem
+   * Building system category to which the product element belongs.
    */
   public enum BuildingSystemEnum {
     WALL("Wall"),
@@ -152,29 +154,29 @@ public class ProductCategory {
 
   private BuildingSystemEnum buildingSystem;
 
-  public ProductCategory() {
+  public PrefabElementProductCategory() {
     super();
   }
 
   /**
    * Constructor with only required parameters
    */
-  public ProductCategory(CategoryEnum category, BuildingSystemEnum buildingSystem) {
+  public PrefabElementProductCategory(CategoryEnum category, BuildingSystemEnum buildingSystem) {
     this.category = category;
     this.buildingSystem = buildingSystem;
   }
 
-  public ProductCategory category(CategoryEnum category) {
+  public PrefabElementProductCategory category(CategoryEnum category) {
     this.category = category;
     return this;
   }
 
   /**
-   * Get category
+   * Specific product category within building systems.
    * @return category
    */
   @NotNull 
-  @Schema(name = "category", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "category", example = "Structural Insulated Panels (SIPs)", description = "Specific product category within building systems.", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("category")
   public CategoryEnum getCategory() {
     return category;
@@ -184,17 +186,17 @@ public class ProductCategory {
     this.category = category;
   }
 
-  public ProductCategory buildingSystem(BuildingSystemEnum buildingSystem) {
+  public PrefabElementProductCategory buildingSystem(BuildingSystemEnum buildingSystem) {
     this.buildingSystem = buildingSystem;
     return this;
   }
 
   /**
-   * Get buildingSystem
+   * Building system category to which the product element belongs.
    * @return buildingSystem
    */
   @NotNull 
-  @Schema(name = "buildingSystem", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "buildingSystem", example = "Facade", description = "Building system category to which the product element belongs.", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("buildingSystem")
   public BuildingSystemEnum getBuildingSystem() {
     return buildingSystem;
@@ -212,9 +214,9 @@ public class ProductCategory {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProductCategory productCategory = (ProductCategory) o;
-    return Objects.equals(this.category, productCategory.category) &&
-        Objects.equals(this.buildingSystem, productCategory.buildingSystem);
+    PrefabElementProductCategory prefabElementProductCategory = (PrefabElementProductCategory) o;
+    return Objects.equals(this.category, prefabElementProductCategory.category) &&
+        Objects.equals(this.buildingSystem, prefabElementProductCategory.buildingSystem);
   }
 
   @Override
@@ -225,7 +227,7 @@ public class ProductCategory {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProductCategory {\n");
+    sb.append("class PrefabElementProductCategory {\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    buildingSystem: ").append(toIndentedString(buildingSystem)).append("\n");
     sb.append("}");

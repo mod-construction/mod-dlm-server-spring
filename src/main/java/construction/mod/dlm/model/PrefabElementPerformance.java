@@ -5,8 +5,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
 import construction.mod.dlm.model.PrefabElementPerformanceAcousticProperties;
+import construction.mod.dlm.model.PrefabElementPerformanceFireResistance;
 import java.math.BigDecimal;
 import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -20,71 +20,23 @@ import java.util.*;
 import javax.annotation.Generated;
 
 /**
- * PrefabElementPerformance
+ * Optional performance metrics related to strength, insulation, or soundproofing.
  */
 
+@Schema(name = "PrefabElement_performance", description = "Optional performance metrics related to strength, insulation, or soundproofing.")
 @JsonTypeName("PrefabElement_performance")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-19T08:58:57.598441451Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T12:37:58.764795587Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementPerformance {
 
-  /**
-   * Gets or Sets resistanceToFireClassification
-   */
-  public enum ResistanceToFireClassificationEnum {
-    A1("A1"),
-    
-    A2("A2"),
-    
-    B("B"),
-    
-    C("C"),
-    
-    D("D"),
-    
-    E("E"),
-    
-    F("F"),
-    
-    _1_HOUR("1-hour"),
-    
-    _2_HOUR("2-hour"),
-    
-    _3_HOUR("3-hour"),
-    
-    _4_HOUR("4-hour");
-
-    private final String value;
-
-    ResistanceToFireClassificationEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static ResistanceToFireClassificationEnum fromValue(String value) {
-      for (ResistanceToFireClassificationEnum b : ResistanceToFireClassificationEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-  private ResistanceToFireClassificationEnum resistanceToFireClassification;
+  private PrefabElementPerformanceFireResistance fireResistance;
 
   private BigDecimal thermalTransmittance;
 
   private @Nullable PrefabElementPerformanceAcousticProperties acousticProperties;
+
+  private BigDecimal airTightness;
+
+  private BigDecimal vaporPermeability;
 
   public PrefabElementPerformance() {
     super();
@@ -93,29 +45,31 @@ public class PrefabElementPerformance {
   /**
    * Constructor with only required parameters
    */
-  public PrefabElementPerformance(ResistanceToFireClassificationEnum resistanceToFireClassification, BigDecimal thermalTransmittance) {
-    this.resistanceToFireClassification = resistanceToFireClassification;
+  public PrefabElementPerformance(PrefabElementPerformanceFireResistance fireResistance, BigDecimal thermalTransmittance, BigDecimal airTightness, BigDecimal vaporPermeability) {
+    this.fireResistance = fireResistance;
     this.thermalTransmittance = thermalTransmittance;
+    this.airTightness = airTightness;
+    this.vaporPermeability = vaporPermeability;
   }
 
-  public PrefabElementPerformance resistanceToFireClassification(ResistanceToFireClassificationEnum resistanceToFireClassification) {
-    this.resistanceToFireClassification = resistanceToFireClassification;
+  public PrefabElementPerformance fireResistance(PrefabElementPerformanceFireResistance fireResistance) {
+    this.fireResistance = fireResistance;
     return this;
   }
 
   /**
-   * Get resistanceToFireClassification
-   * @return resistanceToFireClassification
+   * Get fireResistance
+   * @return fireResistance
    */
-  @NotNull 
-  @Schema(name = "resistanceToFireClassification", requiredMode = Schema.RequiredMode.REQUIRED)
-  @JsonProperty("resistanceToFireClassification")
-  public ResistanceToFireClassificationEnum getResistanceToFireClassification() {
-    return resistanceToFireClassification;
+  @NotNull @Valid 
+  @Schema(name = "fireResistance", requiredMode = Schema.RequiredMode.REQUIRED)
+  @JsonProperty("fireResistance")
+  public PrefabElementPerformanceFireResistance getFireResistance() {
+    return fireResistance;
   }
 
-  public void setResistanceToFireClassification(ResistanceToFireClassificationEnum resistanceToFireClassification) {
-    this.resistanceToFireClassification = resistanceToFireClassification;
+  public void setFireResistance(PrefabElementPerformanceFireResistance fireResistance) {
+    this.fireResistance = fireResistance;
   }
 
   public PrefabElementPerformance thermalTransmittance(BigDecimal thermalTransmittance) {
@@ -124,13 +78,13 @@ public class PrefabElementPerformance {
   }
 
   /**
-   * Get thermalTransmittance
+   * Thermal transmittance (U-value) in W/m²K, typically between 0 and 2
    * minimum: 0
    * maximum: 2
    * @return thermalTransmittance
    */
   @NotNull @Valid @DecimalMin("0") @DecimalMax("2") 
-  @Schema(name = "thermalTransmittance", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "thermalTransmittance", description = "Thermal transmittance (U-value) in W/m²K, typically between 0 and 2", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("thermalTransmittance")
   public BigDecimal getThermalTransmittance() {
     return thermalTransmittance;
@@ -160,6 +114,48 @@ public class PrefabElementPerformance {
     this.acousticProperties = acousticProperties;
   }
 
+  public PrefabElementPerformance airTightness(BigDecimal airTightness) {
+    this.airTightness = airTightness;
+    return this;
+  }
+
+  /**
+   * Air permeability (e.g., n50 value in 1/h or q50 in m³/h·m²) - lower values indicate better airtightness
+   * minimum: 0
+   * @return airTightness
+   */
+  @NotNull @Valid @DecimalMin("0") 
+  @Schema(name = "airTightness", description = "Air permeability (e.g., n50 value in 1/h or q50 in m³/h·m²) - lower values indicate better airtightness", requiredMode = Schema.RequiredMode.REQUIRED)
+  @JsonProperty("airTightness")
+  public BigDecimal getAirTightness() {
+    return airTightness;
+  }
+
+  public void setAirTightness(BigDecimal airTightness) {
+    this.airTightness = airTightness;
+  }
+
+  public PrefabElementPerformance vaporPermeability(BigDecimal vaporPermeability) {
+    this.vaporPermeability = vaporPermeability;
+    return this;
+  }
+
+  /**
+   * Vapor permeability in µ or Sd value in meters (ISO 12572) - measures resistance to water vapor diffusion
+   * minimum: 0
+   * @return vaporPermeability
+   */
+  @NotNull @Valid @DecimalMin("0") 
+  @Schema(name = "vaporPermeability", description = "Vapor permeability in µ or Sd value in meters (ISO 12572) - measures resistance to water vapor diffusion", requiredMode = Schema.RequiredMode.REQUIRED)
+  @JsonProperty("vaporPermeability")
+  public BigDecimal getVaporPermeability() {
+    return vaporPermeability;
+  }
+
+  public void setVaporPermeability(BigDecimal vaporPermeability) {
+    this.vaporPermeability = vaporPermeability;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -169,23 +165,27 @@ public class PrefabElementPerformance {
       return false;
     }
     PrefabElementPerformance prefabElementPerformance = (PrefabElementPerformance) o;
-    return Objects.equals(this.resistanceToFireClassification, prefabElementPerformance.resistanceToFireClassification) &&
+    return Objects.equals(this.fireResistance, prefabElementPerformance.fireResistance) &&
         Objects.equals(this.thermalTransmittance, prefabElementPerformance.thermalTransmittance) &&
-        Objects.equals(this.acousticProperties, prefabElementPerformance.acousticProperties);
+        Objects.equals(this.acousticProperties, prefabElementPerformance.acousticProperties) &&
+        Objects.equals(this.airTightness, prefabElementPerformance.airTightness) &&
+        Objects.equals(this.vaporPermeability, prefabElementPerformance.vaporPermeability);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(resistanceToFireClassification, thermalTransmittance, acousticProperties);
+    return Objects.hash(fireResistance, thermalTransmittance, acousticProperties, airTightness, vaporPermeability);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PrefabElementPerformance {\n");
-    sb.append("    resistanceToFireClassification: ").append(toIndentedString(resistanceToFireClassification)).append("\n");
+    sb.append("    fireResistance: ").append(toIndentedString(fireResistance)).append("\n");
     sb.append("    thermalTransmittance: ").append(toIndentedString(thermalTransmittance)).append("\n");
     sb.append("    acousticProperties: ").append(toIndentedString(acousticProperties)).append("\n");
+    sb.append("    airTightness: ").append(toIndentedString(airTightness)).append("\n");
+    sb.append("    vaporPermeability: ").append(toIndentedString(vaporPermeability)).append("\n");
     sb.append("}");
     return sb.toString();
   }

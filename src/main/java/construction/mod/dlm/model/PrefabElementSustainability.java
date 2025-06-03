@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.math.BigDecimal;
 import org.springframework.lang.Nullable;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
@@ -18,17 +19,18 @@ import java.util.*;
 import javax.annotation.Generated;
 
 /**
- * PrefabElementSustainability
+ * Environmental and sustainability performance such as EPDs or recyclability.
  */
 
+@Schema(name = "PrefabElement_sustainability", description = "Environmental and sustainability performance such as EPDs or recyclability.")
 @JsonTypeName("PrefabElement_sustainability")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-19T08:58:57.598441451Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T12:37:58.764795587Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementSustainability {
 
   private String countryOfManufacturing;
 
   /**
-   * Gets or Sets classification
+   * Simplified sustainability score, where A+ indicates highest performance. Define based on EPD or lifecycle impact benchmarks.
    */
   public enum ClassificationEnum {
     A_("A+"),
@@ -71,16 +73,18 @@ public class PrefabElementSustainability {
   private ClassificationEnum classification;
 
   /**
-   * Gets or Sets voCEmissions
+   * Volatile Organic Compounds emissions level (None, Low, Medium, High)
    */
   public enum VoCEmissionsEnum {
-    NONE("None"),
+    NONE_0_01_MG_M_("None (<0.01 mg/m³)"),
     
-    LOW("Low"),
+    VERY_LOW_0_1_MG_M_("Very Low (<0.1 mg/m³)"),
     
-    MEDIUM("Medium"),
+    LOW_0_3_MG_M_("Low (<0.3 mg/m³)"),
     
-    HIGH("High");
+    MODERATE_0_3_1_0_MG_M_("Moderate (0.3–1.0 mg/m³)"),
+    
+    HIGH_1_0_MG_M_("High (>1.0 mg/m³)");
 
     private final String value;
 
@@ -111,51 +115,10 @@ public class PrefabElementSustainability {
 
   private @Nullable VoCEmissionsEnum voCEmissions;
 
-  /**
-   * Gets or Sets recyclability
-   */
-  public enum RecyclabilityEnum {
-    _0_("0%"),
-    
-    _25_("25%"),
-    
-    _50_("50%"),
-    
-    _75_("75%"),
-    
-    _100_("100%");
-
-    private final String value;
-
-    RecyclabilityEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static RecyclabilityEnum fromValue(String value) {
-      for (RecyclabilityEnum b : RecyclabilityEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-  private @Nullable RecyclabilityEnum recyclability;
+  private @Nullable BigDecimal recyclability;
 
   /**
-   * Gets or Sets energyEfficiency
+   * Energy performance classification, combining insulation tiers and certifications (LEED, BREEAM, etc.).
    */
   public enum EnergyEfficiencyEnum {
     R_1("R-1"),
@@ -172,7 +135,19 @@ public class PrefabElementSustainability {
     
     LEED_GOLD("LEED Gold"),
     
-    LEED_PLATINUM("LEED Platinum");
+    LEED_PLATINUM("LEED Platinum"),
+    
+    BREEAM_GOOD("BREEAM Good"),
+    
+    BREEAM_VERY_GOOD("BREEAM Very Good"),
+    
+    BREEAM_EXCELLENT("BREEAM Excellent"),
+    
+    BREEAM_OUTSTANDING("BREEAM Outstanding"),
+    
+    PASSIVE_HOUSE("Passive House"),
+    
+    DGNB_GOLD("DGNB Gold");
 
     private final String value;
 
@@ -201,7 +176,7 @@ public class PrefabElementSustainability {
     }
   }
 
-  private @Nullable EnergyEfficiencyEnum energyEfficiency;
+  private EnergyEfficiencyEnum energyEfficiency;
 
   public PrefabElementSustainability() {
     super();
@@ -210,9 +185,10 @@ public class PrefabElementSustainability {
   /**
    * Constructor with only required parameters
    */
-  public PrefabElementSustainability(String countryOfManufacturing, ClassificationEnum classification) {
+  public PrefabElementSustainability(String countryOfManufacturing, ClassificationEnum classification, EnergyEfficiencyEnum energyEfficiency) {
     this.countryOfManufacturing = countryOfManufacturing;
     this.classification = classification;
+    this.energyEfficiency = energyEfficiency;
   }
 
   public PrefabElementSustainability countryOfManufacturing(String countryOfManufacturing) {
@@ -221,11 +197,11 @@ public class PrefabElementSustainability {
   }
 
   /**
-   * Get countryOfManufacturing
+   * Country where the element is manufactured
    * @return countryOfManufacturing
    */
   @NotNull 
-  @Schema(name = "countryOfManufacturing", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "countryOfManufacturing", description = "Country where the element is manufactured", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("countryOfManufacturing")
   public String getCountryOfManufacturing() {
     return countryOfManufacturing;
@@ -241,11 +217,11 @@ public class PrefabElementSustainability {
   }
 
   /**
-   * Get classification
+   * Simplified sustainability score, where A+ indicates highest performance. Define based on EPD or lifecycle impact benchmarks.
    * @return classification
    */
   @NotNull 
-  @Schema(name = "classification", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "classification", example = "A", description = "Simplified sustainability score, where A+ indicates highest performance. Define based on EPD or lifecycle impact benchmarks.", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("classification")
   public ClassificationEnum getClassification() {
     return classification;
@@ -261,11 +237,11 @@ public class PrefabElementSustainability {
   }
 
   /**
-   * Get voCEmissions
+   * Volatile Organic Compounds emissions level (None, Low, Medium, High)
    * @return voCEmissions
    */
   
-  @Schema(name = "VOCEmissions", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @Schema(name = "VOCEmissions", example = "Low (<0.3 mg/m³)", description = "Volatile Organic Compounds emissions level (None, Low, Medium, High)", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("VOCEmissions")
   public VoCEmissionsEnum getVoCEmissions() {
     return voCEmissions;
@@ -275,23 +251,25 @@ public class PrefabElementSustainability {
     this.voCEmissions = voCEmissions;
   }
 
-  public PrefabElementSustainability recyclability(RecyclabilityEnum recyclability) {
+  public PrefabElementSustainability recyclability(BigDecimal recyclability) {
     this.recyclability = recyclability;
     return this;
   }
 
   /**
-   * Get recyclability
+   * Percentage of the element that is recyclable, from 0 to 100%
+   * minimum: 0
+   * maximum: 100
    * @return recyclability
    */
-  
-  @Schema(name = "recyclability", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @Valid @DecimalMin("0") @DecimalMax("100") 
+  @Schema(name = "recyclability", description = "Percentage of the element that is recyclable, from 0 to 100%", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("recyclability")
-  public RecyclabilityEnum getRecyclability() {
+  public BigDecimal getRecyclability() {
     return recyclability;
   }
 
-  public void setRecyclability(RecyclabilityEnum recyclability) {
+  public void setRecyclability(BigDecimal recyclability) {
     this.recyclability = recyclability;
   }
 
@@ -301,11 +279,11 @@ public class PrefabElementSustainability {
   }
 
   /**
-   * Get energyEfficiency
+   * Energy performance classification, combining insulation tiers and certifications (LEED, BREEAM, etc.).
    * @return energyEfficiency
    */
-  
-  @Schema(name = "energyEfficiency", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @NotNull 
+  @Schema(name = "energyEfficiency", example = "LEED Gold", description = "Energy performance classification, combining insulation tiers and certifications (LEED, BREEAM, etc.).", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("energyEfficiency")
   public EnergyEfficiencyEnum getEnergyEfficiency() {
     return energyEfficiency;
