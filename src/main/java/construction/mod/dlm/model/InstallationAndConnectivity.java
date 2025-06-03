@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  */
 
 @Schema(name = "InstallationAndConnectivity", description = "Describes how the prefab element is installed and what structural systems it is compatible with.")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T12:37:58.764795587Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T13:59:09.604369992Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class InstallationAndConnectivity {
 
   /**

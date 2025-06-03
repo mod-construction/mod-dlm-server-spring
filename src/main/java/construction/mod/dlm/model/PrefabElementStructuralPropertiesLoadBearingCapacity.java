@@ -24,7 +24,7 @@ import javax.annotation.Generated;
 
 @Schema(name = "PrefabElement_structuralProperties_loadBearingCapacity", description = "The maximum load the element can bear, expressed as a positive number (e.g., 5.0)")
 @JsonTypeName("PrefabElement_structuralProperties_loadBearingCapacity")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T12:37:58.764795587Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T13:59:09.604369992Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementStructuralPropertiesLoadBearingCapacity {
 
   private BigDecimal maximumLoad;

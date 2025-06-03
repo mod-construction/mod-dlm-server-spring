@@ -18,15 +18,16 @@ import java.util.*;
 import javax.annotation.Generated;
 
 /**
- * PrefabElementPerformanceFireResistance
+ * Fire resistance classification of the material, based on Euroclass standards (EN 13501-1).
  */
 
+@Schema(name = "PrefabElement_performance_fireResistance", description = "Fire resistance classification of the material, based on Euroclass standards (EN 13501-1).")
 @JsonTypeName("PrefabElement_performance_fireResistance")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T12:37:58.764795587Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T13:59:09.604369992Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementPerformanceFireResistance {
 
   /**
-   * Euroclass fire reaction classification (EN 13501-1)
+   * Fire resistance classification based on Euroclass standards (EN 13501-1).
    */
   public enum ReactionToFireClassificationEnum {
     A1("A1"),
@@ -73,7 +74,7 @@ public class PrefabElementPerformanceFireResistance {
   private ReactionToFireClassificationEnum reactionToFireClassification;
 
   /**
-   * Fire resistance duration in minutes (EN 1363-1 / ASTM E119)
+   * Fire resistance duration in minutes (EN 1363-1 / ASTM E119).
    */
   public enum FireResistanceDurationEnum {
     _30MIN("30min"),
@@ -135,11 +136,11 @@ public class PrefabElementPerformanceFireResistance {
   }
 
   /**
-   * Euroclass fire reaction classification (EN 13501-1)
+   * Fire resistance classification based on Euroclass standards (EN 13501-1).
    * @return reactionToFireClassification
    */
   @NotNull 
-  @Schema(name = "reactionToFireClassification", description = "Euroclass fire reaction classification (EN 13501-1)", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "reactionToFireClassification", example = "A1", description = "Fire resistance classification based on Euroclass standards (EN 13501-1).", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("reactionToFireClassification")
   public ReactionToFireClassificationEnum getReactionToFireClassification() {
     return reactionToFireClassification;
@@ -155,11 +156,11 @@ public class PrefabElementPerformanceFireResistance {
   }
 
   /**
-   * Fire resistance duration in minutes (EN 1363-1 / ASTM E119)
+   * Fire resistance duration in minutes (EN 1363-1 / ASTM E119).
    * @return fireResistanceDuration
    */
   @NotNull 
-  @Schema(name = "fireResistanceDuration", description = "Fire resistance duration in minutes (EN 1363-1 / ASTM E119)", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "fireResistanceDuration", example = "30min", description = "Fire resistance duration in minutes (EN 1363-1 / ASTM E119).", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("fireResistanceDuration")
   public FireResistanceDurationEnum getFireResistanceDuration() {
     return fireResistanceDuration;
