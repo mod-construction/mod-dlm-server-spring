@@ -18,16 +18,15 @@ import java.util.*;
 import javax.annotation.Generated;
 
 /**
- * Optional data describing how reusable or refurbishable the product is.
+ * SustainabilityCircularity
  */
 
-@Schema(name = "PrefabElement_reuseAndCircularity", description = "Optional data describing how reusable or refurbishable the product is.")
-@JsonTypeName("PrefabElement_reuseAndCircularity")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T13:59:09.604369992Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
-public class PrefabElementReuseAndCircularity {
+@JsonTypeName("Sustainability_circularity")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T14:27:51.113774521Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+public class SustainabilityCircularity {
 
   /**
-   * Ease of disassembly rated from 1 (not possible) to 5 (tool-free), based on ISO 20887:2020.
+   * Rating from 1 (not disassemblable) to 5 (tool-free disassembly).
    */
   public enum DisassemblyRatingEnum {
     _1("1"),
@@ -70,7 +69,7 @@ public class PrefabElementReuseAndCircularity {
   private DisassemblyRatingEnum disassemblyRating;
 
   /**
-   * End-of-life potential of the element, such as single-use, recyclable, or remanufacturable.
+   * Primary reuse potential of the element after its service life.
    */
   public enum ReusePotentialEnum {
     SINGLE_USE("single-use"),
@@ -111,7 +110,7 @@ public class PrefabElementReuseAndCircularity {
   private ReusePotentialEnum reusePotential;
 
   /**
-   * Extent of refurbishment: none, surface-only, partial, or full reuse of functional components.
+   * Refurbishment level: none, surface-only, partial, or full.
    */
   public enum RefurbishmentScopeEnum {
     NONE("none"),
@@ -152,7 +151,7 @@ public class PrefabElementReuseAndCircularity {
   private RefurbishmentScopeEnum refurbishmentScope;
 
   /**
-   * Circularity certification level (e.g., C2C_gold, C2C_platinum).
+   * Level of circularity certification (e.g., C2C_gold).
    */
   public enum CircularityCertificationEnum {
     NONE("none"),
@@ -196,31 +195,31 @@ public class PrefabElementReuseAndCircularity {
 
   private CircularityCertificationEnum circularityCertification;
 
-  public PrefabElementReuseAndCircularity() {
+  public SustainabilityCircularity() {
     super();
   }
 
   /**
    * Constructor with only required parameters
    */
-  public PrefabElementReuseAndCircularity(DisassemblyRatingEnum disassemblyRating, ReusePotentialEnum reusePotential, RefurbishmentScopeEnum refurbishmentScope, CircularityCertificationEnum circularityCertification) {
+  public SustainabilityCircularity(DisassemblyRatingEnum disassemblyRating, ReusePotentialEnum reusePotential, RefurbishmentScopeEnum refurbishmentScope, CircularityCertificationEnum circularityCertification) {
     this.disassemblyRating = disassemblyRating;
     this.reusePotential = reusePotential;
     this.refurbishmentScope = refurbishmentScope;
     this.circularityCertification = circularityCertification;
   }
 
-  public PrefabElementReuseAndCircularity disassemblyRating(DisassemblyRatingEnum disassemblyRating) {
+  public SustainabilityCircularity disassemblyRating(DisassemblyRatingEnum disassemblyRating) {
     this.disassemblyRating = disassemblyRating;
     return this;
   }
 
   /**
-   * Ease of disassembly rated from 1 (not possible) to 5 (tool-free), based on ISO 20887:2020.
+   * Rating from 1 (not disassemblable) to 5 (tool-free disassembly).
    * @return disassemblyRating
    */
   @NotNull 
-  @Schema(name = "disassemblyRating", example = "3", description = "Ease of disassembly rated from 1 (not possible) to 5 (tool-free), based on ISO 20887:2020.", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "disassemblyRating", example = "3", description = "Rating from 1 (not disassemblable) to 5 (tool-free disassembly).", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("disassemblyRating")
   public DisassemblyRatingEnum getDisassemblyRating() {
     return disassemblyRating;
@@ -230,17 +229,17 @@ public class PrefabElementReuseAndCircularity {
     this.disassemblyRating = disassemblyRating;
   }
 
-  public PrefabElementReuseAndCircularity reusePotential(ReusePotentialEnum reusePotential) {
+  public SustainabilityCircularity reusePotential(ReusePotentialEnum reusePotential) {
     this.reusePotential = reusePotential;
     return this;
   }
 
   /**
-   * End-of-life potential of the element, such as single-use, recyclable, or remanufacturable.
+   * Primary reuse potential of the element after its service life.
    * @return reusePotential
    */
   @NotNull 
-  @Schema(name = "reusePotential", example = "recyclable", description = "End-of-life potential of the element, such as single-use, recyclable, or remanufacturable.", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "reusePotential", example = "recyclable", description = "Primary reuse potential of the element after its service life.", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("reusePotential")
   public ReusePotentialEnum getReusePotential() {
     return reusePotential;
@@ -250,17 +249,17 @@ public class PrefabElementReuseAndCircularity {
     this.reusePotential = reusePotential;
   }
 
-  public PrefabElementReuseAndCircularity refurbishmentScope(RefurbishmentScopeEnum refurbishmentScope) {
+  public SustainabilityCircularity refurbishmentScope(RefurbishmentScopeEnum refurbishmentScope) {
     this.refurbishmentScope = refurbishmentScope;
     return this;
   }
 
   /**
-   * Extent of refurbishment: none, surface-only, partial, or full reuse of functional components.
+   * Refurbishment level: none, surface-only, partial, or full.
    * @return refurbishmentScope
    */
   @NotNull 
-  @Schema(name = "refurbishmentScope", example = "partial", description = "Extent of refurbishment: none, surface-only, partial, or full reuse of functional components.", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "refurbishmentScope", example = "partial", description = "Refurbishment level: none, surface-only, partial, or full.", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("refurbishmentScope")
   public RefurbishmentScopeEnum getRefurbishmentScope() {
     return refurbishmentScope;
@@ -270,17 +269,17 @@ public class PrefabElementReuseAndCircularity {
     this.refurbishmentScope = refurbishmentScope;
   }
 
-  public PrefabElementReuseAndCircularity circularityCertification(CircularityCertificationEnum circularityCertification) {
+  public SustainabilityCircularity circularityCertification(CircularityCertificationEnum circularityCertification) {
     this.circularityCertification = circularityCertification;
     return this;
   }
 
   /**
-   * Circularity certification level (e.g., C2C_gold, C2C_platinum).
+   * Level of circularity certification (e.g., C2C_gold).
    * @return circularityCertification
    */
   @NotNull 
-  @Schema(name = "circularityCertification", example = "C2C_gold", description = "Circularity certification level (e.g., C2C_gold, C2C_platinum).", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "circularityCertification", example = "C2C_gold", description = "Level of circularity certification (e.g., C2C_gold).", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("circularityCertification")
   public CircularityCertificationEnum getCircularityCertification() {
     return circularityCertification;
@@ -298,11 +297,11 @@ public class PrefabElementReuseAndCircularity {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PrefabElementReuseAndCircularity prefabElementReuseAndCircularity = (PrefabElementReuseAndCircularity) o;
-    return Objects.equals(this.disassemblyRating, prefabElementReuseAndCircularity.disassemblyRating) &&
-        Objects.equals(this.reusePotential, prefabElementReuseAndCircularity.reusePotential) &&
-        Objects.equals(this.refurbishmentScope, prefabElementReuseAndCircularity.refurbishmentScope) &&
-        Objects.equals(this.circularityCertification, prefabElementReuseAndCircularity.circularityCertification);
+    SustainabilityCircularity sustainabilityCircularity = (SustainabilityCircularity) o;
+    return Objects.equals(this.disassemblyRating, sustainabilityCircularity.disassemblyRating) &&
+        Objects.equals(this.reusePotential, sustainabilityCircularity.reusePotential) &&
+        Objects.equals(this.refurbishmentScope, sustainabilityCircularity.refurbishmentScope) &&
+        Objects.equals(this.circularityCertification, sustainabilityCircularity.circularityCertification);
   }
 
   @Override
@@ -313,7 +312,7 @@ public class PrefabElementReuseAndCircularity {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PrefabElementReuseAndCircularity {\n");
+    sb.append("class SustainabilityCircularity {\n");
     sb.append("    disassemblyRating: ").append(toIndentedString(disassemblyRating)).append("\n");
     sb.append("    reusePotential: ").append(toIndentedString(reusePotential)).append("\n");
     sb.append("    refurbishmentScope: ").append(toIndentedString(refurbishmentScope)).append("\n");

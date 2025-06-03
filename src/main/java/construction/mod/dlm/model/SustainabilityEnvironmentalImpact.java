@@ -19,18 +19,15 @@ import java.util.*;
 import javax.annotation.Generated;
 
 /**
- * Environmental and sustainability performance such as EPDs or recyclability.
+ * SustainabilityEnvironmentalImpact
  */
 
-@Schema(name = "PrefabElement_sustainability", description = "Environmental and sustainability performance such as EPDs or recyclability.")
-@JsonTypeName("PrefabElement_sustainability")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T13:59:09.604369992Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
-public class PrefabElementSustainability {
-
-  private String countryOfManufacturing;
+@JsonTypeName("Sustainability_environmentalImpact")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T14:27:51.113774521Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+public class SustainabilityEnvironmentalImpact {
 
   /**
-   * Simplified sustainability score, where A+ indicates highest performance. Define based on EPD or lifecycle impact benchmarks.
+   * Overall sustainability score based on environmental impact (e.g., A+, A, B).
    */
   public enum ClassificationEnum {
     A_("A+"),
@@ -73,14 +70,14 @@ public class PrefabElementSustainability {
   private ClassificationEnum classification;
 
   /**
-   * Volatile Organic Compounds emissions level (None, Low, Medium, High)
+   * VOC emissions category: None, Low, Medium, or High.
    */
   public enum VoCEmissionsEnum {
     NONE_0_01_MG_M_("None (<0.01 mg/m³)"),
     
     VERY_LOW_0_1_MG_M_("Very Low (<0.1 mg/m³)"),
     
-    LOW_0_3_MG_M_("Low (<0.3 mg/m³)"),
+    LOW_0_1_0_3_MG_M_("Low (0.1–0.3 mg/m³)"),
     
     MODERATE_0_3_1_0_MG_M_("Moderate (0.3–1.0 mg/m³)"),
     
@@ -118,7 +115,7 @@ public class PrefabElementSustainability {
   private @Nullable BigDecimal recyclability;
 
   /**
-   * Energy performance classification, combining insulation tiers and certifications (LEED, BREEAM, etc.).
+   * Energy certification level or standard.
    */
   public enum EnergyEfficiencyEnum {
     R_1("R-1"),
@@ -178,50 +175,29 @@ public class PrefabElementSustainability {
 
   private EnergyEfficiencyEnum energyEfficiency;
 
-  public PrefabElementSustainability() {
+  public SustainabilityEnvironmentalImpact() {
     super();
   }
 
   /**
    * Constructor with only required parameters
    */
-  public PrefabElementSustainability(String countryOfManufacturing, ClassificationEnum classification, EnergyEfficiencyEnum energyEfficiency) {
-    this.countryOfManufacturing = countryOfManufacturing;
+  public SustainabilityEnvironmentalImpact(ClassificationEnum classification, EnergyEfficiencyEnum energyEfficiency) {
     this.classification = classification;
     this.energyEfficiency = energyEfficiency;
   }
 
-  public PrefabElementSustainability countryOfManufacturing(String countryOfManufacturing) {
-    this.countryOfManufacturing = countryOfManufacturing;
-    return this;
-  }
-
-  /**
-   * Country where the element is manufactured
-   * @return countryOfManufacturing
-   */
-  @NotNull 
-  @Schema(name = "countryOfManufacturing", description = "Country where the element is manufactured", requiredMode = Schema.RequiredMode.REQUIRED)
-  @JsonProperty("countryOfManufacturing")
-  public String getCountryOfManufacturing() {
-    return countryOfManufacturing;
-  }
-
-  public void setCountryOfManufacturing(String countryOfManufacturing) {
-    this.countryOfManufacturing = countryOfManufacturing;
-  }
-
-  public PrefabElementSustainability classification(ClassificationEnum classification) {
+  public SustainabilityEnvironmentalImpact classification(ClassificationEnum classification) {
     this.classification = classification;
     return this;
   }
 
   /**
-   * Simplified sustainability score, where A+ indicates highest performance. Define based on EPD or lifecycle impact benchmarks.
+   * Overall sustainability score based on environmental impact (e.g., A+, A, B).
    * @return classification
    */
   @NotNull 
-  @Schema(name = "classification", example = "A", description = "Simplified sustainability score, where A+ indicates highest performance. Define based on EPD or lifecycle impact benchmarks.", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "classification", example = "A+", description = "Overall sustainability score based on environmental impact (e.g., A+, A, B).", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("classification")
   public ClassificationEnum getClassification() {
     return classification;
@@ -231,17 +207,17 @@ public class PrefabElementSustainability {
     this.classification = classification;
   }
 
-  public PrefabElementSustainability voCEmissions(VoCEmissionsEnum voCEmissions) {
+  public SustainabilityEnvironmentalImpact voCEmissions(VoCEmissionsEnum voCEmissions) {
     this.voCEmissions = voCEmissions;
     return this;
   }
 
   /**
-   * Volatile Organic Compounds emissions level (None, Low, Medium, High)
+   * VOC emissions category: None, Low, Medium, or High.
    * @return voCEmissions
    */
   
-  @Schema(name = "VOCEmissions", example = "Low (<0.3 mg/m³)", description = "Volatile Organic Compounds emissions level (None, Low, Medium, High)", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @Schema(name = "VOCEmissions", example = "Low (0.1–0.3 mg/m³)", description = "VOC emissions category: None, Low, Medium, or High.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("VOCEmissions")
   public VoCEmissionsEnum getVoCEmissions() {
     return voCEmissions;
@@ -251,19 +227,19 @@ public class PrefabElementSustainability {
     this.voCEmissions = voCEmissions;
   }
 
-  public PrefabElementSustainability recyclability(BigDecimal recyclability) {
+  public SustainabilityEnvironmentalImpact recyclability(BigDecimal recyclability) {
     this.recyclability = recyclability;
     return this;
   }
 
   /**
-   * Percentage of the element that is recyclable, from 0 to 100%
+   * Recyclability rate of the product from 0 to 100%.
    * minimum: 0
    * maximum: 100
    * @return recyclability
    */
   @Valid @DecimalMin("0") @DecimalMax("100") 
-  @Schema(name = "recyclability", description = "Percentage of the element that is recyclable, from 0 to 100%", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @Schema(name = "recyclability", example = "85", description = "Recyclability rate of the product from 0 to 100%.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("recyclability")
   public BigDecimal getRecyclability() {
     return recyclability;
@@ -273,17 +249,17 @@ public class PrefabElementSustainability {
     this.recyclability = recyclability;
   }
 
-  public PrefabElementSustainability energyEfficiency(EnergyEfficiencyEnum energyEfficiency) {
+  public SustainabilityEnvironmentalImpact energyEfficiency(EnergyEfficiencyEnum energyEfficiency) {
     this.energyEfficiency = energyEfficiency;
     return this;
   }
 
   /**
-   * Energy performance classification, combining insulation tiers and certifications (LEED, BREEAM, etc.).
+   * Energy certification level or standard.
    * @return energyEfficiency
    */
   @NotNull 
-  @Schema(name = "energyEfficiency", example = "LEED Gold", description = "Energy performance classification, combining insulation tiers and certifications (LEED, BREEAM, etc.).", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "energyEfficiency", example = "LEED Certified", description = "Energy certification level or standard.", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("energyEfficiency")
   public EnergyEfficiencyEnum getEnergyEfficiency() {
     return energyEfficiency;
@@ -301,24 +277,22 @@ public class PrefabElementSustainability {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PrefabElementSustainability prefabElementSustainability = (PrefabElementSustainability) o;
-    return Objects.equals(this.countryOfManufacturing, prefabElementSustainability.countryOfManufacturing) &&
-        Objects.equals(this.classification, prefabElementSustainability.classification) &&
-        Objects.equals(this.voCEmissions, prefabElementSustainability.voCEmissions) &&
-        Objects.equals(this.recyclability, prefabElementSustainability.recyclability) &&
-        Objects.equals(this.energyEfficiency, prefabElementSustainability.energyEfficiency);
+    SustainabilityEnvironmentalImpact sustainabilityEnvironmentalImpact = (SustainabilityEnvironmentalImpact) o;
+    return Objects.equals(this.classification, sustainabilityEnvironmentalImpact.classification) &&
+        Objects.equals(this.voCEmissions, sustainabilityEnvironmentalImpact.voCEmissions) &&
+        Objects.equals(this.recyclability, sustainabilityEnvironmentalImpact.recyclability) &&
+        Objects.equals(this.energyEfficiency, sustainabilityEnvironmentalImpact.energyEfficiency);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(countryOfManufacturing, classification, voCEmissions, recyclability, energyEfficiency);
+    return Objects.hash(classification, voCEmissions, recyclability, energyEfficiency);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PrefabElementSustainability {\n");
-    sb.append("    countryOfManufacturing: ").append(toIndentedString(countryOfManufacturing)).append("\n");
+    sb.append("class SustainabilityEnvironmentalImpact {\n");
     sb.append("    classification: ").append(toIndentedString(classification)).append("\n");
     sb.append("    voCEmissions: ").append(toIndentedString(voCEmissions)).append("\n");
     sb.append("    recyclability: ").append(toIndentedString(recyclability)).append("\n");

@@ -27,11 +27,13 @@ src/main/java/construction/mod/dlm/model/PrefabElementPerformance.java
 src/main/java/construction/mod/dlm/model/PrefabElementPerformanceAcousticProperties.java
 src/main/java/construction/mod/dlm/model/PrefabElementPerformanceFireResistance.java
 src/main/java/construction/mod/dlm/model/PrefabElementProductCategory.java
-src/main/java/construction/mod/dlm/model/PrefabElementReuseAndCircularity.java
 src/main/java/construction/mod/dlm/model/PrefabElementStructuralProperties.java
 src/main/java/construction/mod/dlm/model/PrefabElementStructuralPropertiesDeflectionLimit.java
 src/main/java/construction/mod/dlm/model/PrefabElementStructuralPropertiesLoadBearingCapacity.java
 src/main/java/construction/mod/dlm/model/PrefabElementStructuralPropertiesSeismicResistance.java
 src/main/java/construction/mod/dlm/model/PrefabElementStructuralPropertiesWindLoadResistance.java
-src/main/java/construction/mod/dlm/model/PrefabElementSustainability.java
 src/main/java/construction/mod/dlm/model/PrefabElementVersionMetadata.java
+src/main/java/construction/mod/dlm/model/Sustainability.java
+src/main/java/construction/mod/dlm/model/SustainabilityCircularity.java
+src/main/java/construction/mod/dlm/model/SustainabilityEnvironmentalImpact.java
+src/main/java/construction/mod/dlm/model/SustainabilityOrigin.java

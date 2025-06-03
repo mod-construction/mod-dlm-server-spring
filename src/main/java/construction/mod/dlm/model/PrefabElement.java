@@ -15,10 +15,9 @@ import construction.mod.dlm.model.PrefabElementLifecycleAndMaintenance;
 import construction.mod.dlm.model.PrefabElementMaterial;
 import construction.mod.dlm.model.PrefabElementPerformance;
 import construction.mod.dlm.model.PrefabElementProductCategory;
-import construction.mod.dlm.model.PrefabElementReuseAndCircularity;
 import construction.mod.dlm.model.PrefabElementStructuralProperties;
-import construction.mod.dlm.model.PrefabElementSustainability;
 import construction.mod.dlm.model.PrefabElementVersionMetadata;
+import construction.mod.dlm.model.Sustainability;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,7 +39,7 @@ import javax.annotation.Generated;
  */
 
 @Schema(name = "PrefabElement", description = "Prefab Element")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T13:59:09.604369992Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T14:27:51.113774521Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElement {
 
   private UUID id;
@@ -66,9 +65,7 @@ public class PrefabElement {
 
   private @Nullable PrefabElementPerformance performance;
 
-  private @Nullable PrefabElementSustainability sustainability;
-
-  private @Nullable PrefabElementReuseAndCircularity reuseAndCircularity;
+  private @Nullable Sustainability sustainability;
 
   private @Nullable PrefabElementDocumentationAndCompliance documentationAndCompliance;
 
@@ -406,44 +403,24 @@ public class PrefabElement {
     this.performance = performance;
   }
 
-  public PrefabElement sustainability(PrefabElementSustainability sustainability) {
+  public PrefabElement sustainability(Sustainability sustainability) {
     this.sustainability = sustainability;
     return this;
   }
 
   /**
-   * Get sustainability
+   * Environmental and sustainability performance such as EPDs or recyclability.
    * @return sustainability
    */
   @Valid 
-  @Schema(name = "sustainability", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @Schema(name = "sustainability", description = "Environmental and sustainability performance such as EPDs or recyclability.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   @JsonProperty("sustainability")
-  public PrefabElementSustainability getSustainability() {
+  public Sustainability getSustainability() {
     return sustainability;
   }
 
-  public void setSustainability(PrefabElementSustainability sustainability) {
+  public void setSustainability(Sustainability sustainability) {
     this.sustainability = sustainability;
-  }
-
-  public PrefabElement reuseAndCircularity(PrefabElementReuseAndCircularity reuseAndCircularity) {
-    this.reuseAndCircularity = reuseAndCircularity;
-    return this;
-  }
-
-  /**
-   * Get reuseAndCircularity
-   * @return reuseAndCircularity
-   */
-  @Valid 
-  @Schema(name = "reuseAndCircularity", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-  @JsonProperty("reuseAndCircularity")
-  public PrefabElementReuseAndCircularity getReuseAndCircularity() {
-    return reuseAndCircularity;
-  }
-
-  public void setReuseAndCircularity(PrefabElementReuseAndCircularity reuseAndCircularity) {
-    this.reuseAndCircularity = reuseAndCircularity;
   }
 
   public PrefabElement documentationAndCompliance(PrefabElementDocumentationAndCompliance documentationAndCompliance) {
@@ -607,7 +584,6 @@ public class PrefabElement {
         Objects.equals(this.structuralProperties, prefabElement.structuralProperties) &&
         Objects.equals(this.performance, prefabElement.performance) &&
         Objects.equals(this.sustainability, prefabElement.sustainability) &&
-        Objects.equals(this.reuseAndCircularity, prefabElement.reuseAndCircularity) &&
         Objects.equals(this.documentationAndCompliance, prefabElement.documentationAndCompliance) &&
         Objects.equals(this.installationAndConnectivity, prefabElement.installationAndConnectivity) &&
         Objects.equals(this.lifecycleAndMaintenance, prefabElement.lifecycleAndMaintenance) &&
@@ -619,7 +595,7 @@ public class PrefabElement {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, versionMetadata, name, description, boundingBox, images, productCategory, material, dimensional, structuralProperties, performance, sustainability, reuseAndCircularity, documentationAndCompliance, installationAndConnectivity, lifecycleAndMaintenance, aestheticAndCustomizationOptions, economicFactors, ifcType, bimModelUrl);
+    return Objects.hash(id, versionMetadata, name, description, boundingBox, images, productCategory, material, dimensional, structuralProperties, performance, sustainability, documentationAndCompliance, installationAndConnectivity, lifecycleAndMaintenance, aestheticAndCustomizationOptions, economicFactors, ifcType, bimModelUrl);
   }
 
   @Override
@@ -638,7 +614,6 @@ public class PrefabElement {
     sb.append("    structuralProperties: ").append(toIndentedString(structuralProperties)).append("\n");
     sb.append("    performance: ").append(toIndentedString(performance)).append("\n");
     sb.append("    sustainability: ").append(toIndentedString(sustainability)).append("\n");
-    sb.append("    reuseAndCircularity: ").append(toIndentedString(reuseAndCircularity)).append("\n");
     sb.append("    documentationAndCompliance: ").append(toIndentedString(documentationAndCompliance)).append("\n");
     sb.append("    installationAndConnectivity: ").append(toIndentedString(installationAndConnectivity)).append("\n");
     sb.append("    lifecycleAndMaintenance: ").append(toIndentedString(lifecycleAndMaintenance)).append("\n");
