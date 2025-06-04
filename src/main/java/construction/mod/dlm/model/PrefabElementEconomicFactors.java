@@ -24,7 +24,7 @@ import javax.annotation.Generated;
 
 @Schema(name = "PrefabElement_economicFactors", description = "Optional cost estimation, lead time, and supply constraints.")
 @JsonTypeName("PrefabElement_economicFactors")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-03T14:27:51.113774521Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-06-04T08:15:16.967754158Z[Etc/UTC]", comments = "Generator version: 7.14.0-SNAPSHOT")
 public class PrefabElementEconomicFactors {
 
   private @Nullable BigDecimal costPerUnit;
